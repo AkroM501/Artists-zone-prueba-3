@@ -1,19 +1,14 @@
 from django.urls import path
-from .views import home, listanaruto, form_vehiculo, index, galery, picture, search, register, login
+from core import views
 
 
 urlpatterns = [
-    path('',home,name="home"),
-    path('listanaruto/',listanaruto,name="listanaruto"),
-    path('form-vehiculo',form_vehiculo,name="form_vehiculo"),
-    path('index/',index,name="index"),
-    path('galery/',galery,name="galery"),
-    path('galery/picture.html',picture,name="picture"),
-    path('index/picture.html',picture,name="picture"),
-    path('galery/galery.html',search,name="picture"),
-    path('index/galery.html',search,name="search"),
-    path('register/',register,name="register"),
-    path('login/',login,name="login")
-
-
+    path('',views.home,name="Home"),
+    path('galery/',views.galery,name="Galery"),
+    path('galery/picture.html',views.picture,name="Picture"),
+    path('picture.html/',views.picture,name="Picture"),
+    path('galery/galery.html',views.search,name="Picture"),
+    path('galery.html',views.search,name="Search"),
+    path('register/',views.register,name="Register"),
+    path('login/',views.login,name="Login"),
 ]
