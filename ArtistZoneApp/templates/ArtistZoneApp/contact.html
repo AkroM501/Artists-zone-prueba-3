@@ -24,31 +24,34 @@
   <body>
     <header class="iw_header">
       <div class="iw_header__left">
-        <img src="img/logo.svg" alt="logo" />
+        <img src="{% static 'ArtistZoneApp/img/logo.svg' %}" alt="logo" />
         <i class="i__bars fas fa-bars"></i>
       </div>
 
       <nav class="nav">
         <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="galery.html">Galeria</a></li>
-          <li><a href="#">Pronto...</a></li>
+          <li><a href="http://127.0.0.1:8000">Inicio</a></li>
+          <li><a href="http://127.0.0.1:8000/galery/">Galeria</a></li>
+          <li><a href="http://127.0.0.1:8000/publicar/">Publica Tu Cuadro</a></li>
+          <li><a href="http://127.0.0.1:8000/publicaciones/">Publicaciones Locales</a></li>
         </ul>
       </nav>
 
-      <div >
+      <div>
         <section>
-          <form autocomplete="off">
+          <form autocomplete="off" id="form">
             <div>
-              <input type="text" name="q" placeholder="Buscar">
+              <input type="text" id="search" placeholder="Buscar">
             </div>
           </form>
         </section>
       </div>
 
+      </div>
+
       <div class="iw_header__right">
-        <a href="register.html">Registrar</a>
-        <a href="login.html">Logear</a>
+        <a href="http://127.0.0.1:8000/register/">Registrar</a>
+        <a href="http://127.0.0.1:8000/login/">Logear</a>
       </div>
     </header>
 
