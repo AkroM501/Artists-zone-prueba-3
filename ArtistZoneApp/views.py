@@ -2,6 +2,8 @@ from django.shortcuts import render
 from ArtistZoneApp.forms import PublicacionesForm
 from .models import Publicaciones
 from django import http
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 def home(request):
     return render(request,'ArtistZoneApp/index.html')
@@ -37,6 +39,7 @@ def search(request):
     return render(request,'ArtistZoneApp/galery.html')
 
 def register(request):
+
     return render(request,'ArtistZoneApp/register.html')
 
 def login(request):

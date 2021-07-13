@@ -56,23 +56,11 @@
       </div>
     </header>
 
-    <form class="iw_form">
-      <div class="formSection">
-        <label>Nombre</label>
-        <input type="text" placeholder="Nombre..." />
-      </div>
-
-      <div class="formSection">
-        <label>Email</label>
-        <input type="email" placeholder="Email..." />
-      </div>
-
-      <div class="formSection">
-        <label>Contraseña</label>
-        <input type="password" placeholder="Contraseña..." />
-      </div>
-
-      <button type="submit">Registrarse</button>
+    <form class="form" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+    
+      <button type="submit" id="submit">Registrarse</button>
     </form>
 
     <script src="{% static 'ArtistZoneApp/js/searchSave.js' %}"></script>
