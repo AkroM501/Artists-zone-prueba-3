@@ -9,7 +9,7 @@ urlpatterns = [
     path('galery/galery.html',views.search,name="Picture"),
     path('galery.html',views.search,name="Search"),
     path('register/',views.register,name="Register"),
-    path('login/',views.login,name="Login"),
+    # path('login/',views.login,name="Login"),
     path('publicaciones/',views.publicaciones,name="Publicaciones"),
     path('publicar/',views.publicar,name="Publicar"),
 ]
