@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from ArtistZoneApp.forms import PublicacionesForm
+from ArtistZoneApp.forms import PublicacionesForm, RegistroForm
 from .models import Publicaciones
 from django import http
 from django.contrib.auth.forms import UserCreationForm
@@ -39,9 +39,11 @@ def search(request):
     return render(request,'ArtistZoneApp/galery.html')
 
 def register(request):
-
-    return render(request,'ArtistZoneApp/register.html')
+    data ={
+        'form':RegistroForm()
+    }
+    return render(request,'Registration/register.html',data)
 
 def login(request):
-    return render(request,'ArtistZoneApp/login.html')
+    return render(request,'Registration/login.html')
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vehiculos de entrenadores pokemon</h1>
+    <table>
+        <tr>
+            <td>Patente</td>
+            <td>Marca</td>
+            <td>Modelo</td>
+        </tr>
+        {% for ve in listaVehiculos %}
+        <tr>
+            <td>{{ve.patente}}</td>
+            <td>{{ve.marca}}</td>
+            <td>{{ve.modelo}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% load static %}
+    <img src="{%  static 'core/img/pika.jpg' %}" alt="">
+</body>
+</html>

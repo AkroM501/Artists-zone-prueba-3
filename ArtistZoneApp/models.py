@@ -14,6 +14,7 @@ class Publicaciones(models.Model):
 class Usuarios(models.Model):
     nombre_usuario=models.CharField(max_length=30)
     contrasenna =models.CharField(max_length=30)
+    email=models.EmailField(blank=True,null=True)
 
     def __str__(self):
         return self.nombre_usuario
