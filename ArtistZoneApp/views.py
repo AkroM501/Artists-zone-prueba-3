@@ -36,10 +36,4 @@ def picture(request):
 def search(request):
     return render(request,'ArtistZoneApp/galery.html')
 
-def register(request):
-
-    return render(request,'Registration/register.html')
-
-def login(request):
-    return render(request,'Registration/login.html')
 
