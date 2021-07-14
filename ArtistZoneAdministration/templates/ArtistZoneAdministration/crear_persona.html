@@ -1,0 +1,8 @@
+{% extends 'ArtistZoneAdministration/administrar.html' %}
+{% block titulo %}Gestion de Personas{% endblock titulo %}
+{% block cuerpo %}
+<form method="POST">{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">AGREGAR o MODIFICAR</button>
+</form>
+{% endblock cuerpo %}
