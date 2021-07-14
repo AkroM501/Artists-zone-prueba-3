@@ -24,8 +24,17 @@ class Task(models.Model):
         ordering = ['complete']
 
 class ImagenesIndex(models.Model):
+    titulo = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=200)
     imagen = models.ImageField(upload_to="imagenes",null=True)
 
-    def __str__(self):
-        return self.id, self.descripcion
+class ImagenesIndex1(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=200)
+    imagen = models.ImageField(upload_to="imagenes",null=True)
+
+class ImagenesIndex2(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=200)
+    imagen = models.ImageField(upload_to="imagenes",null=True)
+

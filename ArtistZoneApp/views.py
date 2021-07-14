@@ -1,10 +1,17 @@
 from django.shortcuts import render
 from ArtistZoneApp.forms import PublicacionesForm
 from .models import Publicaciones
+from ArtistZoneAdministration.models import ImagenesIndex, ImagenesIndex1, ImagenesIndex2
 from django import http
 
 def home(request):
-    return render(request,'ArtistZoneApp/index.html')
+    index = ImagenesIndex.objects.all()
+    datos = {
+        "listaIndex":index
+    }
+    return render(request,'ArtistZoneApp/index.html',datos)
+
+
 
 def publicaciones(request):
 

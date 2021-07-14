@@ -6,5 +6,5 @@ from .models import Publicaciones
 class PublicacionesForm(ModelForm):
     class Meta:
         model = Publicaciones
-        fields= ['nombre_cuadro','nombre_autor','precio','imagen_cuadro']
+        fields= '__all__'
 
