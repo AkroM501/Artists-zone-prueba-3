@@ -70,33 +70,38 @@
 
     <div class="container">
     <h1>Administracion de Publicaciones</h1>
-    <table border="2">
+    <table border="6">
         <thead>
             <tr>
-                <td>Nombre Del Cuadro</td>
-                <td>Nombre Del Autor</td>
-                <td>Precio Cuadro</td>
-                <td>Cuadro</td>
+                <th>Nombre Del Cuadro</th>
+                <th>Nombre Del Autor</th>
+                <th>Precio Cuadro</th>
+                <th>Cuadro</th>
             </tr>
         </thead>
         <tbody>
             {% for ve in listaPublicaciones %}
         <tr>
-            <td>{{ve.nombre_cuadro}}</td>
-            <td>{{ve.nombre_autor}}</td>
-            <td>{{ve.precio}}</td>
+            <th>{{ve.nombre_cuadro}}</th>
+            <th>{{ve.nombre_autor}}</th>
+            <th>{{ve.precio}}</th>
             {%  if ve.imagen_cuadro %}
-            <td>
+            <th>
                 <img src="{{ve.imagen_cuadro.url}}" width="100" height="80" alt="">
-            </td>
-            <td><a href="{% url 'Editar' ve.id %}">EDITAR</a> <a href="{% url 'Eliminar' ve.id %}">ELIMINAR</a>  </td>
+            </th>
+            <td> <button  class="btn btn-warning"><a style="text-decoration: none; color: white;"  href="{% url 'Editar' ve.id %}">EDITAR</a></button> <button  class="btn btn-danger"><a style="text-decoration: none; color: white;"  href="{% url 'Eliminar' ve.id %}">ELIMINAR</a></button> </td>
+            
             {%  endif %}
+            
         </tr>
         {% endfor %}
+        
     </div>
         </tbody>
     </table>
+    <button  class="btn btn-success"><a style="text-decoration: none; color: white;"  href="{% url 'Gestion' %}">Agregar</a></button>
     </div>
+    
     {% endblock cuerpo %}
 </body>
 </html>

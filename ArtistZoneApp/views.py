@@ -36,4 +36,10 @@ def picture(request):
 def search(request):
     return render(request,'ArtistZoneApp/galery.html')
 
-
+def administrar(request):
+    publicaciones = Publicaciones.objects.all()
+    datos = {
+        "listaPublicaciones":publicaciones
+    }
+    
+    return render(request, 'ArtistZoneApp/index.html',datos)

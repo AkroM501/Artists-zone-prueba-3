@@ -23,3 +23,9 @@ class Task(models.Model):
     class Meta:
         ordering = ['complete']
 
+class ImagenesIndex(models.Model):
+    descripcion = models.CharField(max_length=200)
+    imagen = models.ImageField(upload_to="imagenes",null=True)
+
+    def __str__(self):
+        return self.id, self.descripcion
