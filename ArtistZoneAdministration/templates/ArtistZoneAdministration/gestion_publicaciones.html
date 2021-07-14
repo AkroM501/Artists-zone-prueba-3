@@ -1,8 +1,17 @@
 {% extends 'ArtistZoneAdministration/administrar.html' %}
+
 {% block titulo %}Gestion de Publicaciones{% endblock titulo %}
+
 {% block cuerpo %}
+
 <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <div class="container" style=" display: flex; justify-content: center;">
+        <div>
+            <h1>Editar Publicacion</h1>
     {{form.as_p}}
-    <button type="submit">AGREGAR o MODIFICAR</button>
+    
+    <button class="btn btn-success"type="submit">AGREGAR o MODIFICAR</button>
+</div>
+</div>
 </form>
 {% endblock cuerpo %}

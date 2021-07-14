@@ -52,29 +52,33 @@
     </div>
   </header>
 
+  <div class="container" style="display: flex; justify-content: center;">
+    <div>
+    <h1>PUBLICACIONES</h1>
 
-    <h1>Publicaciones</h1>
-    <table>
-        <tr>
-            <td>Nombre del Cuadro</td>
-            <td>Nombre Autor</td>
-            <td>Precio</td>
-            <td>Cuadro</td>
-        </tr>
-        {% for ve in listaPublicaciones %}
-        <tr>
-            <td>{{ve.nombre_cuadro}}</td>
-            <td>{{ve.nombre_autor}}</td>
-            <td>{{ve.precio}}</td>
-            {%  if ve.imagen_cuadro %}
-            <td>
-                <img src="{{ve.imagen_cuadro.url}}" width="100" height="80" alt="">
-            </td>
-            {%  endif %}
-        </tr>
-        {% endfor %}
-    </table>
 
+    {% for ve in listaPublicaciones %}
+
+     <div >   
+
+      <div class="card" style="width: 18rem; margin-top: 30px;">
+        {%  if ve.imagen_cuadro %}
+        <img class="card-img-top" src="{{ve.imagen_cuadro.url}}" alt="Card image cap">
+        {%  endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ve.nombre_cuadro}}</h5>
+          <p class="card-text">Nombre Autor: {{ve.nombre_autor}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Precio: {{ve.precio}}$</li>
+        </ul>
+
+    </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  </div>
 
 </body>
 </html>

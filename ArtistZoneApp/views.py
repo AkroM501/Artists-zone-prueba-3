@@ -14,6 +14,9 @@ def publicaciones(request):
     }
     return render(request, 'ArtistZoneApp/publicaciones.html',datos)
 
+
+
+
 def publicar(request):
     datos = {
         'form':PublicacionesForm()
@@ -22,7 +25,7 @@ def publicar(request):
         formulario = PublicacionesForm(request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            return http.HttpResponseRedirect("http://127.0.0.1:8000/publicar/")
+            return http.HttpResponseRedirect("http://127.0.0.1:8000/publicaciones/")
             datos['mensaje'] = "Gurdado correctamente"
         datos['form'] = formulario
     return render(request, 'ArtistZoneApp/publicar.html',datos)
@@ -36,10 +39,3 @@ def picture(request):
 def search(request):
     return render(request,'ArtistZoneApp/galery.html')
 
-def administrar(request):
-    publicaciones = Publicaciones.objects.all()
-    datos = {
-        "listaPublicaciones":publicaciones
-    }
-    
-    return render(request, 'ArtistZoneApp/index.html',datos)
