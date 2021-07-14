@@ -61,7 +61,7 @@ def editarPublicacion(request, id):
             'form':form
         }
     else:
-        form= PublicacionesForm(request.POST, instance= publicacion)
+        form= PublicacionesForm(request.POST, files=request.FILES, instance= publicacion)
         context ={
             'form':form
         }
